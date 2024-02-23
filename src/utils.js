@@ -20,10 +20,6 @@ export function colorizeBackground(k, r, g, b) {
     ]);
 }
 
-export async function fetchMapData(mapPath) {
-  return await (await fetch(mapPath)).json();
-}
-
 export function drawTiles(k, map, layer, tileheight, tilewidth) {
   let nbOfDrawnTiles = 0;
   const tilePos = k.vec2(0, 0);
@@ -46,6 +42,22 @@ export function drawTiles(k, map, layer, tileheight, tilewidth) {
     ]);
   }
 }
+
+export async function fetchMapData(mapPath) {
+  return await (await fetch(mapPath)).json();
+}
+
+export function generateColliderBoxComponents(k, width, height, pos, tag) {
+  return [
+    k.rect(width, height),
+    k.pos(pos.x, pos.y + 16),
+    k.area(),
+    k.body({isStatic: true}),
+    k.offscreen(),
+    tag,
+  ];
+}
+
 export function drawBoundaries(k, map, layer) {
   for (const object of layer.objects) {
     map.add(
@@ -58,15 +70,4 @@ export function drawBoundaries(k, map, layer) {
       ),
     );
   }
-}
-
-export function generateColliderBoxComponents(k, width, height, pos, tag) {
-  return [
-    k.rect(width, height),
-    k.pos(pos.x, pos.y + 16),
-    k.area(),
-    k.body({isStatic: true}),
-    k.offscreen(),
-    tag,
-  ];
 }

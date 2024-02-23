@@ -1,13 +1,11 @@
 import { generatePlayerComponents, setPlayerMovement } from "../entities/player.js";
-import { generateSlimeComponents } from "../entities/slime.js";
+import { generateSlimeComponents, setSlimeAI } from "../entities/slime.js";
 import { colorizeBackground, drawBoundaries, drawTiles, fetchMapData } from "../utils.js";
 
 export default async function world(k) {
   colorizeBackground(k, 76, 170, 255);
   const mapData = await fetchMapData("./assets/maps/world.json");
-  console.log(mapData);
-
-  const map = k.add([k.pos(0, 0)])
+  const map = k.add([k.pos(0, 0)]);
 
   const entities = {
     player: null,
@@ -50,11 +48,11 @@ export default async function world(k) {
     drawTiles(k, map, layer, mapData.tileheight, mapData.tilewidth);
   }
 
-  k.camScale(3);
+  k.camScale(4);
   k.camPos(entities.player.worldPos());
-  k.onUpdate(async () => {
-    if (entities.player.pos.dist(k.camPos())) {
-      await k.tween(
+  k.onUpdate(() => {
+    if (entities.player.pos.dist(k.camPos()) > 3) {
+        k.tween(
         k.camPos(),
         entities.player.worldPos(),
         0.15,
@@ -67,4 +65,12 @@ export default async function world(k) {
   });
 
   setPlayerMovement(k, entities.player);
+
+  for (const slime of entities.slimes) {
+    setSlimeAI(k, slime)
+  }
+
+  entities.player.onCollide("door-entrance", () => {
+    k.go("house");
+  });
 }
