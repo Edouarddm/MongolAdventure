@@ -486,7 +486,7 @@
                  "name":"",
                  "rotation":0,
                  "type":"",
-                 "visible":false,
+                 "visible":true,
                  "width":240,
                  "x":400,
                  "y":32
@@ -868,7 +868,7 @@
                 }],
          "opacity":1,
          "type":"objectgroup",
-         "visible":true,
+         "visible":false,
          "x":0,
          "y":0
         }, 
