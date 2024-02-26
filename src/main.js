@@ -2,6 +2,7 @@ import k from "./kaboomContext.js";
 import world from "./scenes/world.js";
 import house from "./scenes/house.js";
 
+// k.loadFont("gameboy", "./assets/gb.ttf");
 k.loadSprite("assets", "assets/topdownasset.png", {
   sliceX: 39,
   sliceY: 31,
@@ -33,6 +34,10 @@ k.loadSprite("assets", "assets/topdownasset.png", {
     "slime-side": { from: 860, to: 861, loop: true },
     "slime-idle-up": 897,
     "slime-up": { from: 897, to: 898, loop: true },
+
+    "oldman-down": 866,
+    "oldman-side": 907,
+    "oldman-up": 905,
   },
 });
 

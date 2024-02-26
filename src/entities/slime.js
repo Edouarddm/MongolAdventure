@@ -8,7 +8,7 @@ export function generateSlimeComponents(k, pos) {
       anim: "slime-idle-down",
     }),
     k.area({shape: new k.Rect(k.vec2(0, 6), 16, 10)}),
-    k.body(),
+    k.body( {isSensor: true }),
     k.pos(pos),
     k.offscreen(),
     k.opacity(),
