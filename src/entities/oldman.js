@@ -32,7 +32,7 @@ export async function startInteraction(k, oldman, player) {
   const responses = oldmanLines[gameState.getLocal()];
 
   let nbTalkedOldMan = oldManState.getNbTalkedOldMan();
-  if (nbTalkedOldMan > responses.length - 1) {
+  if (nbTalkedOldMan > responses.length - 2) {
     oldManState.setNbTalkedOldMan(1);
     nbTalkedOldMan = oldManState.getNbTalkedOldMan();
   }
@@ -42,5 +42,5 @@ export async function startInteraction(k, oldman, player) {
     oldManState.setNbTalkedOldMan(nbTalkedOldMan + 1);
   }
 
-  dialog(k, k.vec2(250, 500), responses[0]);
+  dialog(k, k.vec2(250, 500), responses[index]);
 }

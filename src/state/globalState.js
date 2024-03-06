@@ -1,10 +1,10 @@
-export default function globalState() {
+export default function globalStateManager() {
   let instance = null;
 
   function createInstance() {
     let freezePlayer = false;
-    let locale = "french";
-    let fontSize = 32;
+    let locale = "english";
+    let fontSize = 30;
 
     return {
       setFreezePlayer(value) {

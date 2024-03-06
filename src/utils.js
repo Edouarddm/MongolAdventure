@@ -49,9 +49,8 @@ export async function fetchMapData(mapPath) {
 
 export function generateColliderBoxComponents(k, width, height, pos, tag) {
   return [
-    k.rect(width, height),
     k.pos(pos.x, pos.y + 16),
-    k.area(),
+    k.area({ shape: new k.Rect(k.vec2(0), width, height) }),
     k.body({isStatic: true}),
     k.offscreen(),
     tag,

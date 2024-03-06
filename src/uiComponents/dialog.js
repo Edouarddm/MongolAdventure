@@ -6,7 +6,7 @@ async function displayLine(textContainer, line) {
       setTimeout(() => {
         textContainer.text += char;
         resolve();
-      }, 10);
+      }, 15);
     })
   }
 }
@@ -14,7 +14,7 @@ async function displayLine(textContainer, line) {
 export async function dialog(k, pos, content) {
   gameState.setFreezePlayer(true);
   const dialogBox = k.add([
-    k.rect(800, 200),
+    k.rect(800, 180),
     k.pos(pos),
     k.fixed(),
   ]);
