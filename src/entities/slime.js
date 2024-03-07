@@ -12,7 +12,8 @@ export function generateSlimeComponents(k, pos) {
     k.pos(pos),
     k.offscreen(),
     k.opacity(),
-    k.state("idle", ["idle", ...directinalStates],),
+    k.state("idle", ["idle", ...directinalStates]),
+    k.health(3),
     {
       speed: 30,
       attackPower: 0.5,

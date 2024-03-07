@@ -1,6 +1,7 @@
 import { colorizeBackground, drawBoundaries, drawTiles, fetchMapData, playAnimIfNotPlaying } from "../utils.js";
 import { generatePlayerComponents, setPlayerMovement } from "../entities/player.js";
 import { generateOldManComponents, startInteraction } from "../entities/oldman.js";
+import { healthBar } from "../uiComponents/healthBar.js";
 
 export default async function house(k) {
   colorizeBackground(k, 40, 40, 40);
@@ -64,4 +65,5 @@ export default async function house(k) {
     });
   });
 
+  healthBar(k);
 }

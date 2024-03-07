@@ -1,6 +1,7 @@
 import { generatePlayerComponents, setPlayerMovement } from "../entities/player.js";
 import { generateSlimeComponents, setSlimeAI } from "../entities/slime.js";
-import { colorizeBackground, drawBoundaries, drawTiles, fetchMapData } from "../utils.js";
+import { healthBar } from "../uiComponents/healthBar.js";
+import { colorizeBackground, drawBoundaries, drawTiles, fetchMapData, onAttacked, onCollideWithPlayer } from "../utils.js";
 
 export default async function world(k) {
   colorizeBackground(k, 76, 170, 255);
@@ -67,10 +68,14 @@ export default async function world(k) {
   setPlayerMovement(k, entities.player);
 
   for (const slime of entities.slimes) {
-    setSlimeAI(k, slime)
+    setSlimeAI(k, slime);
+    onAttacked(k, slime, entities.player);
+    onCollideWithPlayer(k, slime,);
   }
 
   entities.player.onCollide("door-entrance", () => {
     k.go("house");
   });
+
+  healthBar(k);
 }
