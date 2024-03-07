@@ -1,8 +1,9 @@
 import k from "./kaboomContext.js";
 import world from "./scenes/world.js";
 import house from "./scenes/house.js";
-
+import dungeon from "./scenes/dungeon.js";
 // k.loadFont("gameboy", "./assets/gb.ttf");
+
 k.loadSprite("assets", "assets/topdownasset.png", {
   sliceX: 39,
   sliceY: 31,
@@ -69,6 +70,7 @@ k.loadSpriteAtlas("./assets/topdownasset.png", {
 const scenes = {
   world,
   house,
+  dungeon,
 };
 
 for (const sceneName in scenes) {
