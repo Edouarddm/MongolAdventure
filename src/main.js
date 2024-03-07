@@ -27,6 +27,10 @@ k.loadSprite("assets", "assets/topdownasset.png", {
       to: 1029,
       loop: true,
     },
+    "player-attack-up": 1106,
+    "player-attack-down": 1104,
+    "player-attack-right": 1105,
+    "player-attack-left": 1105,
 
     "slime-idle-down": 858,
     "slime-down": { from: 858, to: 859, loop: true },

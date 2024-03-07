@@ -1,7 +1,7 @@
 import { playAnimIfNotPlaying } from "../utils.js";
 import { dialog } from "../uiComponents/dialog.js";
 import  oldmanLines from "../content/oldmanDialogue.js";
-import { gameState, oldManState } from "../state/stateManager.js";
+import { gameState, oldManState, playerState } from "../state/stateManager.js";
 
 export function generateOldManComponents(k, pos) {
   return [
@@ -28,6 +28,8 @@ export async function startInteraction(k, oldman, player) {
   if (player.direction === "down") {
     playAnimIfNotPlaying(oldman, "oldman-up");
   }
+
+  playerState.setIsSwordEquipped(true);
 
   const responses = oldmanLines[gameState.getLocal()];
 
