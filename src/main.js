@@ -43,6 +43,8 @@ k.loadSprite("assets", "assets/topdownasset.png", {
     "oldman-down": 866,
     "oldman-side": 907,
     "oldman-up": 905,
+
+    "ghost-down": { from: 862, to: 863, loop: true },
   },
 });
 

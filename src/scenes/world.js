@@ -33,7 +33,7 @@ export default async function world(k) {
           );
           continue;
         }
-        if (object.name === "player") {
+        if (object.name === "player" && previousScene !== "dungeon") {
             entities.player = map.add(
               generatePlayerComponents(
                 k,

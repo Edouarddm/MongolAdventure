@@ -4,8 +4,10 @@ export default function globalStateManager() {
   function createInstance() {
     let previousScene = null;
     let freezePlayer = false;
-    let locale = "english";
+    let locale = "french";
     let fontSize = 30;
+    let isGhostDefeated = false;
+    let isSonSaved = false;
 
     return {
       setPreviousScene(sceneName) {
@@ -27,6 +29,16 @@ export default function globalStateManager() {
         locale = value;
       },
       getLocal: () => locale,
+
+      setIsGhostDefeated(value) {
+        isGhostDefeated = value;
+      },
+      getIsGhostDefeated: () => isGhostDefeated,
+
+      setIsSonSaved(value) {
+        isSonSaved = value;
+      },
+      getIsSonSaved: () => isSonSaved,
     };
   }
 

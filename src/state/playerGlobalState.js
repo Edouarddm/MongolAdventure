@@ -12,11 +12,13 @@ export default function playerGlobalStateManager() {
         isSwordEquipped = value;
       },
       getIsSwordEquipped: () => isSwordEquipped,
+
       getMaxHealth: () => maxHealth,
       setHealth(value) {
         health = value;
       },
       getHealth: () => health,
+
       setHasKey(value) {
         hasKey = value;
       },

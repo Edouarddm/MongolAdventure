@@ -2,7 +2,7 @@ import { colorizeBackground, drawBoundaries, drawTiles, fetchMapData, playAnimIf
 import { generatePlayerComponents, setPlayerMovement } from "../entities/player.js";
 import { generateOldManComponents, startInteraction } from "../entities/oldman.js";
 import { healthBar } from "../uiComponents/healthBar.js";
-import { gameState } from "../state/stateManager.js"; 
+import { gameState } from "../state/stateManager.js";
 
 export default async function house(k) {
   colorizeBackground(k, 40, 40, 40);
@@ -53,6 +53,7 @@ export default async function house(k) {
    setPlayerMovement(k, entities.player);
 
    entities.player.onCollide("door-exit", () => {
+    gameState.setPreviousScene("house");
      k.go("world");
    })
 
