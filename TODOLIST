@@ -1,0 +1,10 @@
+- Problème pas de perte hp si player reste collé en évitant de proc de onCollide
+- Augmenter range épée
+- rendre slimes aggressifs
+
+//🚨 Quand tout est fait 🚨//
+- Ajouter arc
+- Ajouter cheval
+- Changer les assets
+- Ajouter systeme de sauvegarde
+- Refacto
