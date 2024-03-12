@@ -14,11 +14,11 @@ const english = [
 const french = [
   [
     "À l'aide!",
-    "Je suis tenu prisonnier.",
+    "Je suis retenu prisonnier.",
     "Les clefs sont dans la pièce en haut.",
-    "Elles sont guardées par un fantôme!",
+    "Elles sont gardées par un fantôme!",
   ],
-  ["Wow vous avez obtenu les clefs!", "Merci de m'avoir sauvé."],
+  ["Wow vous avez obtenu les clefs, je n'y croyais plus!", "Merci de m'avoir sauvé."],
   [
     "Je vous remercie encore une fois de m'avoir sauvé.",
     "Allez voir mon père, il vous récompensera généreusement!",

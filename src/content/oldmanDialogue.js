@@ -17,12 +17,12 @@ const english = [
 const french = [
   [
     "C'est dangereux de s'aventurer seul!",
-    "Prends cette épée, presses la touche ESPACE l'utiliser.",
     "S'il te plaît, sauves mon fils! Il est capturé au donjon situé a l'ouest.",
-    "Je te récompenserais généreusement!",
+    "Prends cette épée, presses la touche ESPACE l'utiliser.",
+    "Si tu y parviens, je te récompenserais généreusement!",
   ],
   [
-    "Tu as oublié comment utiliser ton épée?",
+    "Tu as déjà oublié comment utiliser ton épée?",
     "Presses la touche ESPACE pour attaquer.",
     "S'il te plait, sauves mon fils avant qu'il ne soit trop tard!",
   ],
